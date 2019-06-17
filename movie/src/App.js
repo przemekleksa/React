@@ -10,6 +10,7 @@ import Category from './pages/category/category';
 import AddMovie from './components/addmovie/addmovie';
 import AddUser from './components/adduser/adduser';
 import UserList from './pages/userlist/userlist';
+import Categories from './pages/categories/categories';
 
 
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/addmovie" component={AddMovie} />
             <Route path="/adduser" component={AddUser} />
             <Route path="/userlist" component={UserList} />
+            <Route path="/categories" component={Categories} />
             <Route path="/category/:name" component={Category} />
             <Route component={NotFound} />
           </Switch>

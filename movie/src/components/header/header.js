@@ -8,11 +8,17 @@ const Header = (props) => {
         <div className="header">
             <div className="container">
                 <h1>{props.title}</h1>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/">Category</Link></li>
-                    <li><Link to="/">Drama</Link></li>
-                </ul>
+                {props.breadcrumb.length > 0 &&
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        {props.breadcrumb.map((item, key) =>{
+                            return (
+                                <li><Link to={item.link}>{item.name}</Link></li>
+                            )
+                        })}
+                      
+                    </ul>
+                }
             </div>
         </div>
      );

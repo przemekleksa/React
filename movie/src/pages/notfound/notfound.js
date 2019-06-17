@@ -9,7 +9,7 @@ function play(){
 
 const NotFound = () => {
     return ( 
-        <div>
+        <div className="container">
             <audio id="audio" src="./sorry.mp3"></audio>
             <div class="four-o-four">
                 <div className="image"><img src={sorry} alt="hal" class="sorry" onMouseEnter="this.play()" /></div>

@@ -34,13 +34,16 @@ class Menu extends Component {
                     <nav>
                         <ul>
                             <li>
-                                <a href="#">Strona główna</a>
+                                <a href="#">Home</a>
                             </li>
                             <li>
-                                <a href="#">Filmy</a>
+                                <a href="#">Movies</a>
                             </li>
                             <li>
-                                <a href="#">Seriale</a>
+                                <a href="#">Series</a>
+                            </li>
+                            <li>
+                                <a href="/categories">Categories</a>
                             </li>
                         </ul>
                     </nav>
