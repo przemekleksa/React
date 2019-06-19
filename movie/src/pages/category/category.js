@@ -14,20 +14,22 @@ class Category extends Component {
     render () {
         return ( 
         <div>
-            
-            <Header 
-            title={this.props.match.params.name} 
-            breadcrumb={[
-                {
-                name: 'Categories',
-                link: '/categories'
-                },
-                {
-                    name: 'Drama',
-                    link: '/category/drama'
-                },
-            ]}
-            />
+            {!this.props.isLoading &&
+                <Header 
+                title={this.props.categoryFromApi.name} 
+                breadcrumb={[
+                    {
+                    name: 'Categories',
+                    link: '/categories'
+                    },
+                    {
+                        name: this.props.categoryFromApi.name,
+                        link: '/category/' + this.props.categoryFromApi.name.clean_name
+                    },
+                ]}
+             />
+            }
+           
             <Loader isLoading={this.props.isLoading}/>
         </div>
      );
