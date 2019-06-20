@@ -13,7 +13,7 @@ export const loadCategoryFromApi = (cleanNameCategory) => {
                 response.data.category,
                 response.data.movies.data
             ));
-            dispatch(changeCategoryLoading(false));
+            // dispatch(changeCategoryLoading(false));
         })
     }
 }
@@ -25,10 +25,10 @@ export const changeCategoryLoading = (load) => {
     }
 }
 
-export const categoryLoadSuccess = (categoryFromApi, movieFromApi) => {
+export const categoryLoadSuccess = (categoryFromApi, moviesFromApi) => {
     return {
         type: CATEGORY_LOAD_SUCCESS,
         categoryFromApi: categoryFromApi,
-        movieFromApi: movieFromApi
+        moviesFromApi: moviesFromApi
     }
 }

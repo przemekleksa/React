@@ -3,6 +3,8 @@ import Header from '../../components/header/header';
 import Loader from '../../components/loader/loader';
 import {connect} from 'react-redux';
 import { loadCategoryFromApi } from '../../actions/category';
+import MovieList from '../../components/movie/movieList';
+import './category.scss'
 
 class Category extends Component {
 
@@ -15,6 +17,7 @@ class Category extends Component {
         return ( 
         <div>
             {!this.props.isLoading &&
+            <>
                 <Header 
                 title={this.props.categoryFromApi.name} 
                 breadcrumb={[
@@ -28,6 +31,18 @@ class Category extends Component {
                     },
                 ]}
              />
+             <div className="container">
+                {(this.props.moviesFromApi.length === 0) ? 
+                    <div>
+                        Ta kategoria nie ma jeszcze filmów
+                    </div>
+                    :
+                    <div className="movie-list">
+                        {this.props.moviesFromApi.map((item, key) => <MovieList movie={item.movie} key={key} />)}
+                    </div>
+                }
+             </div>
+             </>
             }
            
             <Loader isLoading={this.props.isLoading}/>
@@ -40,7 +55,8 @@ class Category extends Component {
 const mapStateToProps = (state) => {
     return {
         isLoading: state.category.isLoading,
-        categoryFromApi: state.category.categoryApi
+        categoryFromApi: state.category.categoryApi,
+        moviesFromApi: state.category.moviesApi
     }
 }
 

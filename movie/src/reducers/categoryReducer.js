@@ -3,7 +3,7 @@ import { CATEGORY_LOADING, CATEGORY_LOAD_SUCCESS } from '../constants/actions';
 
 const initState = {
     isLoading: true,
-    categoriesApi: {},
+    categoryApi: {},
     moviesApi: {}
 }
 
@@ -18,7 +18,8 @@ const categoryReducer = (state = initState, action) =>{
             return {
                 ...state,
                 categoryApi: action.categoryFromApi,
-                moviesApi: action.moviesFromApi
+                moviesApi: action.moviesFromApi,
+                isLoading: false
             }
         default:
             return state;
