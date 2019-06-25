@@ -11,7 +11,6 @@ import AddMovie from './components/addmovie/addmovie';
 import AddUser from './components/adduser/adduser';
 import UserList from './pages/userlist/userlist';
 import Categories from './pages/categories/categories';
-import RegisterPage from './pages/register/register';
 
 
 
@@ -28,7 +27,6 @@ function App() {
             <Route path="/userlist" component={UserList} />
             <Route path="/categories" component={Categories} />
             <Route path="/category/:name" component={Category} />
-            <Route path="/rejestracja" component={RegisterPage} />
             <Route component={NotFound} />
           </Switch>
           <Footer year="2019"/>
