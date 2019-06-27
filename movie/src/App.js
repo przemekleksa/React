@@ -28,7 +28,7 @@ function App() {
             <Route path="/userlist" component={UserList} />
             <Route path="/categories" component={Categories} />
             <Route path="/category/:name" component={Category} />
-            <Route path="/rejestracja" component={RegisterPage} />
+            <Route path="/register" component={RegisterPage} />
             <Route component={NotFound} />
           </Switch>
           <Footer year="2019"/>

@@ -36,8 +36,9 @@ export const registerUser = (userFormData) => {
       dispatch(changeUserLoading(false));
       dispatch(registerUserSuccess(response.data.message, 200))
     }).catch((error) => {
+      const {message} = error.response.data;
       dispatch(changeUserLoading(false));
-      dispatch(registerUserError(error.message, 422))
+      dispatch(registerUserError(message, 422))
     })
   }
 }; 
