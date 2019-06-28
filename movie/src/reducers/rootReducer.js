@@ -5,8 +5,10 @@ import categoryReducer from './categoryReducer';
 import categoriesReducer from './categoriesReducer';
 import movieReducer from './movieReducer';
 import usersReducer from './usersReducer';
+import authReducer from './authReducer';
 
 export default combineReducers({
+    auth: authReducer,
     category: categoryReducer,
     categories: categoriesReducer,
     movie: movieReducer,

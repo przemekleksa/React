@@ -12,6 +12,7 @@ import AddUser from './components/adduser/adduser';
 import UserList from './pages/userlist/userlist';
 import Categories from './pages/categories/categories';
 import RegisterPage from './pages/register/register';
+import LoginPage from './pages/login/login';
 
 
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/categories" component={Categories} />
             <Route path="/category/:name" component={Category} />
             <Route path="/register" component={RegisterPage} />
+            <Route path="/login" component={LoginPage} />
             <Route component={NotFound} />
           </Switch>
           <Footer year="2019"/>
