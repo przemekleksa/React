@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './movieList.scss';
+import Favorite from '../favorite/favorite';
 
 const MovieList = (props) => {
     return ( 
@@ -18,7 +19,7 @@ const MovieList = (props) => {
             <div className="details">
                 <h4>Year: {props.movie.year} Duration: {props.movie.duration} minutes</h4>
             </div>
-            
+            <Favorite movieId={props.movie.id} movieFavorite={props.movie.favourite}/>
         </div>
      );
 }

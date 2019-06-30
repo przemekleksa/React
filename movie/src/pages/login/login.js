@@ -3,6 +3,9 @@ import './login.scss';
 import { Formik, Form, Field } from 'formik';
 import { connect } from 'react-redux';
 import * as Yup from 'yup';
+import Loader from '../../components/loader/loader';
+import { login, clearLoginState } from '../../actions/auth';
+import { Redirect } from 'react-router-dom';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -13,10 +16,38 @@ const LoginSchema = Yup.object().shape({
 });
 
 class LoginPage extends Component {
+  componentWillUnmount = () => {
+    this.props.dispatch(clearLoginState());
+  }
   render() {
+
+    if(this.props.isLogin) {
+      return <Redirect to="/" />
+    }
+
     return (
       <div className="container">
           <h1>Logowanie</h1>
+          <Loader isLoading={this.props.isLoading} />
+
+          {(this.props.statusCode === 200 &&
+            !this.props.isLoading &&
+            this.props.message.length
+            ) &&
+            <div>
+              {this.props.message}
+              </div>
+            }
+
+            {(this.props.statusCode === 401 &&
+            !this.props.isLoading &&
+            this.props.message.length
+            ) &&
+            <div>
+              {this.props.message}
+            </div>
+            }
+
           <Formik
             initialValues={{
               email: '',
@@ -24,7 +55,7 @@ class LoginPage extends Component {
             }}
             validationSchema={LoginSchema}
             onSubmit={(values) => {
-              // this.props.dispatch(login(values))
+              this.props.dispatch(login(values))
             }}
           >
 
@@ -61,15 +92,15 @@ class LoginPage extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     isLogin: state.auth.isLogin,
-//     isLoading: state.auth.isLoading,
-//     statusCode: state.auth.statusCode,
-//     message: state.auth.message
-//   }
-// }
+const mapStateToProps = (state) => {
+  return {
+    isLogin: state.auth.isLogin,
+    isLoading: state.auth.isLoading,
+    statusCode: state.auth.statusCode,
+    message: state.auth.message
+  }
+}
 
 
-// export default connect(mapStateToProps, null)(Login);
-export default LoginPage;
+export default connect(mapStateToProps, null)(LoginPage);
+// export default LoginPage;

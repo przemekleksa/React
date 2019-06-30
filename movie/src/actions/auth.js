@@ -8,7 +8,7 @@ import {
   USER_LOGIN_RESET_STATE
 } from "../constants/actions";
 
-import setAuthToken from "../utils/setAuthToken";
+import setAuthToken from "../utils/setAuth";
 
 
 export const login = (authCredentials) => {

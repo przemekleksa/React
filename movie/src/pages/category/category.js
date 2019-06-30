@@ -27,7 +27,7 @@ class Category extends Component {
                     },
                     {
                         name: this.props.categoryFromApi.name,
-                        link: '/category/' + this.props.categoryFromApi.name.clean_name
+                        link: '/category/' + this.props.categoryFromApi.clean_name
                     },
                 ]}
              />

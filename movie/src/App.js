@@ -13,6 +13,9 @@ import UserList from './pages/userlist/userlist';
 import Categories from './pages/categories/categories';
 import RegisterPage from './pages/register/register';
 import LoginPage from './pages/login/login';
+import Logout from './pages/logout/logout';
+import { ToastContainer } from 'react-toastify';
+import FavoriteList from './pages/favoriteList/favoriteList';
 
 
 
@@ -20,6 +23,7 @@ function App() {
   return (
    
       <BrowserRouter>
+       
           <Navbar />
           <Switch>
             <Route path="/" component={Homepage} exact />
@@ -31,9 +35,12 @@ function App() {
             <Route path="/category/:name" component={Category} />
             <Route path="/register" component={RegisterPage} />
             <Route path="/login" component={LoginPage} />
+            <Route path="/logout" component={Logout} />
+            <Route path="/favorites" component={FavoriteList} />
             <Route component={NotFound} />
           </Switch>
           <Footer year="2019"/>
+        <ToastContainer />
       </BrowserRouter>
    
   );

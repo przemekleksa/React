@@ -26,7 +26,7 @@ class Movie extends Component {
                             },
                             {
                                 name: this.props.movieFromApi.name,
-                                link: '/movie/' + this.props.movieFromApi.name.clean_name
+                                link: '/movie/' + this.props.movieFromApi.clean_name
                             },
                         ]}
                     />

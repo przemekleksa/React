@@ -6,6 +6,7 @@ import categoriesReducer from './categoriesReducer';
 import movieReducer from './movieReducer';
 import usersReducer from './usersReducer';
 import authReducer from './authReducer';
+import favoritesReducer from './favoritesReducer';
 
 export default combineReducers({
     auth: authReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
     categories: categoriesReducer,
     movie: movieReducer,
     users: usersReducer,
+    favorites: favoritesReducer,
 })

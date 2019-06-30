@@ -22,3 +22,8 @@ export const USER_LOGIN_LOADING = 'USER_LOGIN_LOADING';
 export const USER_LOGIN_RESET_STATE = 'USER_LOGIN_RESET_STATE';
 
 export const USER_LOGOUT = 'USER_LOGOUT';
+
+
+//nazwy akcji do obslugi reduxa w stronie listy ulubiontch filmow
+export const FAVORITE_LOADING = 'FAVORITE_LOADING';
+export const FAVORITE_LOAD_SUCCESS = 'FAVORITE_LOAD_SUCCESS';
